@@ -22,10 +22,13 @@ public class Servlet05 extends HttpServlet{
 		
 		//컨트롤러 생성 및 요청 처리 메소드 호출
 		Controller05 ctrl = new Controller05();
-		ctrl.getBoardList(request, response);
+		String viewName = ctrl.getBoardList(request, response);
 		
 		//응답 내용을 생성
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/view05.jsp");
+		String prefix = "/WEB-INF/views/";
+		String suffix = ".jsp";
+		RequestDispatcher rd = 
+				request.getRequestDispatcher("/WEB-INF/views/" + viewName + suffix);
 		rd.forward(request, response);
 		
 	}

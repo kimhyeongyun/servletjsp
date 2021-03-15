@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.mycompany.webapp.dto.Board;
 
 public class Controller05 {
-	public void getBoardList(HttpServletRequest request, HttpServletResponse response) {
+	public String getBoardList(HttpServletRequest request, HttpServletResponse response) {
 		//요청 내용을 확인
 				System.out.println("클라이언트 IP" + request.getRemoteHost());
 				//요청 처리를 확인
@@ -25,5 +25,10 @@ public class Controller05 {
 					list.add(board);
 				}
 				request.setAttribute("list", list);
+				
+				
+				//뷰 이름 리턴
+				//return "view05";
+				return "view052";
 	}
 }
